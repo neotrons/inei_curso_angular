@@ -7,6 +7,18 @@ import { Component, OnInit, OnChanges, SimpleChanges, OnDestroy } from '@angular
 })
 export class ExampleArtifactComponent implements OnChanges, OnInit, OnDestroy {
 
+  title = 'example';
+  isValid = true;
+  directives = ['ngIf', 'ngFor', 'ngSwitch', 'ng-template'];
+  languages = [
+    {
+      name: "JavaScript"
+    },
+    {
+      name: "Python"
+    }
+  ];
+
   constructor() {
     console.log(`life cycle: 1 constructor`);
   }
@@ -17,6 +29,9 @@ export class ExampleArtifactComponent implements OnChanges, OnInit, OnDestroy {
 
   ngOnInit(): void {
     console.log(`life cycle: 3 ngOnInit`);
+    setTimeout(() => {
+      this.isValid = false;
+    }, 5000)
   }
 
   ngOnDestroy(): void {

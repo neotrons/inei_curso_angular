@@ -40,4 +40,5 @@
   </p>
 </div>
 
-<app-example-artifact></app-example-artifact>
+<app-example-artifact *ngIf="isValid"></app-example-artifact>
+<button (click)="onValid();">Ocultar o mostrar componente</button>

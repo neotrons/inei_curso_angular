@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
@@ -6,13 +6,16 @@ import { Component } from '@angular/core';
   templateUrl: './example-chapter.component.html',
   styleUrls: ['./example-chapter.component.scss']
 })
-export class ExampleChapterComponent {
+export class ExampleChapterComponent implements OnInit {
   title = 'Curso Angular Inei';
   imageUrl = 'https://via.placeholder.com/150';
   isUnchanged = true;
   classes = 'aClassDemo';
   buttonTitle = 'Ocultar imagen';
   displayNone = '';
+  isValid = true;
+
+  ngOnInit() {}
 
   changeTitle(): void {
     console.log(`Evento click para cambiar titulo`);
@@ -27,5 +30,9 @@ export class ExampleChapterComponent {
       this.displayNone = 'none';
       this.buttonTitle = 'Mostrar Imagen';
     }
+  }
+
+  onValid(): void {
+    this.isValid = !this.isValid;
   }
 }
