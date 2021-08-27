@@ -6,11 +6,13 @@ import { ExampleModule } from './example/example.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
+import { FirstComponent } from './first/first.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloComponent,
+    FirstComponent,
   ],
   imports: [
     BrowserModule,
