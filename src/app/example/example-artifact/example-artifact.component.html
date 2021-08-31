@@ -1,0 +1,41 @@
+<p *ngIf="1==1">
+  Aplicando de ngIf 1
+</p>
+
+<p *ngIf="title == 'angular'">
+  Aplicando de ngIf 2
+</p>
+
+<p *ngIf="isValid">
+  Aplicando de ngIf 3
+</p>
+
+<ul>
+  <li *ngFor="let directive of directives">
+    {{ directive }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let language of languages">
+    {{ language.name }}
+  </li>
+</ul>
+
+<p>
+  <input type="text" [(ngModel)]="title">
+</p>
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'angular'">El curso es Angular</p>
+  <p *ngSwitchCase="'typescript'">El curso es Typescript</p>
+  <p *ngSwitchCase="'python'">El curso es Python</p>
+  <p *ngSwitchDefault>Titulo no encontrado</p>
+</div>
+
+<ng-template #titleError>
+  <p>este es un template de error</p>
+</ng-template>
+
+<div *ngIf="title == 'angular' else titleError">
+  <p>El titulo es angular</p>
+</div>
