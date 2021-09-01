@@ -19,6 +19,16 @@ const routes: Routes = [
     component: ExampleChapterComponent
   },
   {
+    path: 'map',
+    loadChildren: () => import('./modules/maps/maps.module').then(m => m.MapsModule)
+  },
+
+  {
+    path: 'report',
+    loadChildren: () => import('./modules/reports/reports.module').then(m => m.ReportsModule)
+  },
+
+  {
     path: '**',
     component: HelloComponent
   }
