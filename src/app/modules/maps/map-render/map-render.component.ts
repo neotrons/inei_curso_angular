@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { UbigeoData } from '../interfaces/ubigeo-data';
 
 @Component({
   selector: 'app-map-render',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapRenderComponent implements OnInit {
 
-  constructor() { }
+  @Input() data!: UbigeoData;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
