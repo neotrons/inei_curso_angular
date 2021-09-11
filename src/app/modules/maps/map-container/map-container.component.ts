@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UbigeoData } from '../interfaces/ubigeo-data'; 
+import { UbigeoData } from '../interfaces/ubigeo-data';
+import { ubigeosSelectedMock } from '../mocks/ubigeos-selected.mock';
 
 @Component({
   selector: 'app-map-container',
@@ -8,24 +9,10 @@ import { UbigeoData } from '../interfaces/ubigeo-data';
 })
 export class MapContainerComponent implements OnInit {
 
-  ubigeoSelected: UbigeoData = {
-    ubigeo: "150113",
-    nombre: "Jesus Maria",
-    point: [1234, 9876]
-  }
+  ubigeoSelected: UbigeoData = ubigeosSelectedMock[1];
 
-  ubigeosSelected: UbigeoData[] = [
-    {
-      ubigeo: "150101",
-      nombre: "Lima",
-      point: [98764, 12365]
-    },
-    {
-      ubigeo: "150113",
-      nombre: "Jesus Maria",
-      point: [1234, 9876]
-    }
-  ]
+  ubigeosSelected: UbigeoData[] = ubigeosSelectedMock;
+
   constructor() { }
 
   ngOnInit(): void {
