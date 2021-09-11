@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { FirstComponent } from './first/first.component';
 import { UbigeoService } from './modules/maps/services/ubigeo.service';
+import { UbigeoMockService } from './modules/maps/services/ubigeo-mock.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { UbigeoService } from './modules/maps/services/ubigeo.service';
     ExampleModule,
   ],
   providers: [
-    UbigeoService,
+    {provide: UbigeoService, useClass: UbigeoMockService},
   ],
   bootstrap: [AppComponent]
 })
