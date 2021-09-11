@@ -1,14 +1,15 @@
-<p>
-  {{ data.ubigeo }}
- </p>
- 
-<p>
- {{ data.nombre }}
-</p>
-
-<p>
-  x: {{ data.point[0] }}
-  y: {{ data.point[1] }}
- </p>
-
- <button (click)="onClick()">Elegir ubicacion</button>
+<div class="container">
+  <h2>
+    {{ data.nombre }}
+  </h2>
+  <p>
+    {{ data.ubigeo }}
+   </p>
+   
+  <p>
+    x: {{ data.point[0] }}
+    y: {{ data.point[1] }}
+   </p>
+  
+   <button (click)="onClick()">Elegir ubicacion</button>
+</div>
