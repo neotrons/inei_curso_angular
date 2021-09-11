@@ -11,4 +11,8 @@ export class UbigeoService {
   getAllUbigeo(): UbigeoData[] {
     return [];
   }
+
+  getUbigeo(ubigeo: string): Promise<UbigeoData> {
+    return new Promise((resolve, reject) => {});
+  }
 }

@@ -21,6 +21,7 @@ export class MapContainerComponent implements OnInit {
 
   fetch(): void {
     this.ubigeosSelected = this.ubigeoService.getAllUbigeo();
+    this.ubigeoService.getUbigeo('150113').then(res => console.log(res))
   }
 
   mapClicler(ubigeo: string): void {

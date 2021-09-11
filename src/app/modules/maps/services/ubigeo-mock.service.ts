@@ -16,4 +16,16 @@ export class UbigeoMockService extends UbigeoService {
   getAllUbigeo(): UbigeoData[] {
     return ubigeosSelectedMock;
   }
+
+  getUbigeo(ubigeo: string): Promise<UbigeoData> {
+    return new Promise((resolve, reject) => {
+      const ubigeoValue: UbigeoData | undefined  = ubigeosSelectedMock.find(element => element.ubigeo === ubigeo);
+      if (ubigeoValue) {
+        resolve(ubigeoValue);
+      }
+      else {
+        reject('ubigeo no existe');
+      }
+    });
+  }
 }
