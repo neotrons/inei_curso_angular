@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UbigeoData } from '../interfaces/ubigeo-data';
 
 @Component({
@@ -9,11 +9,18 @@ import { UbigeoData } from '../interfaces/ubigeo-data';
 export class MapRenderComponent implements OnInit {
 
   @Input() data!: UbigeoData;
+  @Output() clickMap: EventEmitter<string>;
 
   constructor() {
+    this.clickMap = new EventEmitter();
   }
 
   ngOnInit(): void {
+  }
+
+  onClick(): void {
+    console.log(">>> valor a emitir", this.data.ubigeo);
+    this.clickMap.emit(this.data.ubigeo);
   }
 
 }

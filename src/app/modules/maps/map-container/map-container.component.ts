@@ -30,4 +30,8 @@ export class MapContainerComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  mapClicler(ubigeo: string): void {
+    console.log(">> valor recibido", ubigeo);
+  }
 }
