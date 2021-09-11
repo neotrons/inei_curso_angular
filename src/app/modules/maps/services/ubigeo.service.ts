@@ -9,8 +9,8 @@ export class UbigeoService {
 
   constructor() { }
 
-  getAllUbigeo(): UbigeoData[] {
-    return [];
+  getAllUbigeo(): Observable<UbigeoData[]> {
+    return new Observable<UbigeoData[]>(observer => {});
   }
 
   getUbigeoPromise(ubigeo: string): Promise<UbigeoData> {

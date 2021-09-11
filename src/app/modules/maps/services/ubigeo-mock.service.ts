@@ -14,8 +14,8 @@ export class UbigeoMockService extends UbigeoService {
     super();
   }
 
-  getAllUbigeo(): UbigeoData[] {
-    return ubigeosSelectedMock;
+  getAllUbigeo(): Observable<UbigeoData[]> {
+    return new Observable<UbigeoData[]>(observer => { observer.next(ubigeosSelectedMock)});
   }
 
   private search(ubigeo: string): UbigeoData | undefined {

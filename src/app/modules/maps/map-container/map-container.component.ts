@@ -22,7 +22,9 @@ export class MapContainerComponent implements OnInit, OnDestroy {
   }
 
   fetch(): void {
-    this.ubigeosSelected = this.ubigeoService.getAllUbigeo();
+    this.ubigeoService.getAllUbigeo().subscribe(
+      res => this.ubigeosSelected = res
+    );
     this.ubigeoService.getUbigeoPromise('150113').then(res => console.log(res));
     this.ubigeoSuscription = this.ubigeoService.getUbigeo('150101').subscribe(res => console.log(res));
   }
