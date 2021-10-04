@@ -27,7 +27,10 @@ const routes: Routes = [
     path: 'report',
     loadChildren: () => import('./modules/reports/reports.module').then(m => m.ReportsModule)
   },
-
+  {
+    path: 'contact',
+    loadChildren: () => import('./modules/contacts/contacts.module').then(m => m.ContactsModule)
+  },
   {
     path: '**',
     component: HelloComponent
