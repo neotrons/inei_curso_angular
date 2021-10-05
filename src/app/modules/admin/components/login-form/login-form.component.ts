@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { StorageAuthService } from 'src/app/shared/services/storage-auth.service';
 import { Login } from '../../interfaces/login';
 import { LoginApiService } from '../../services/login-api.service';
 
@@ -17,7 +18,8 @@ export class LoginFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private loginService: LoginApiService
+    private loginService: LoginApiService,
+    private storage: StorageAuthService
   ) { }
 
   ngOnInit(): void {
@@ -45,7 +47,8 @@ export class LoginFormComponent implements OnInit {
       const login: Login = this.form.value;
       this.loginService.auth(login).subscribe(
         res => {
-          this.router.navigate(['/admin'])
+          this.storage.setToken(res.token);
+          setTimeout(()=> this.router.navigate(['/admin']), 1000);
         },
         err => {
           console.log(err);
