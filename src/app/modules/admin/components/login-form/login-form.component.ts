@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Login } from '../../interfaces/login';
+import { LoginApiService } from '../../services/login-api.service';
 
 @Component({
   selector: 'app-login-form',
@@ -13,7 +15,9 @@ export class LoginFormComponent implements OnInit {
   error = "";
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router,
+    private loginService: LoginApiService
   ) { }
 
   ngOnInit(): void {
@@ -36,10 +40,20 @@ export class LoginFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.error = "";
     if (this.form.valid) {
       const login: Login = this.form.value;
+      this.loginService.auth(login).subscribe(
+        res => {
+          this.router.navigate(['/admin'])
+        },
+        err => {
+          console.log(err);
+          this.error = "usuario y password incorrectos";
+        }
+      )
     }else {
-      this.error = "usuario y password incorrectos"
+      this.error = "usuario y password incorrectos";
     }
   }
 }
