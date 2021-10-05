@@ -42,7 +42,12 @@ const routes: Routes = [
   {
     path: 'admin',
     component: AdministratorLayout,
-    children: []
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule)
+      }
+    ]
   },
   {
     path: '**',
