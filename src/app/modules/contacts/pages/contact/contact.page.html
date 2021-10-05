@@ -1,3 +1,20 @@
-<h2>Contactenos</h2>
-<app-contact-form></app-contact-form>
-<p>Telefono: +51 926326425</p>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="contacts-tab" data-toggle="tab" href="#contacts" 
+    role="tab" aria-controls="contacts" aria-selected="true">contactos</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="suggestions-tab" data-toggle="tab" href="#suggestions" 
+    role="tab" aria-controls="suggestions" aria-selected="false">Sugerencias</a>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+    <h2>Contactenos</h2>
+    <app-contact-form></app-contact-form>
+    <p>Telefono: +51 926326425</p>
+  </div>
+  <div class="tab-pane fade" id="suggestions" role="tabpanel" aria-labelledby="suggestions-tab">
+    <app-suggestion-form></app-suggestion-form>
+  </div>
+</div>
