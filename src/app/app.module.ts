@@ -11,12 +11,16 @@ import { FirstComponent } from './first/first.component';
 import { UbigeoService, } from './modules/maps/services/ubigeo.service';
 import { UbigeoMockService } from './modules/maps/services/ubigeo-mock.service';
 import { UbigeoApiService } from './modules/maps/services/ubigeo-api.service';
+import { WebsiteLayout } from './layouts/website/website.layout';
+import { AdministratorLayout } from './layouts/administrator/administrator.layout';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloComponent,
     FirstComponent,
+    WebsiteLayout,
+    AdministratorLayout,
   ],
   imports: [
     BrowserModule,
